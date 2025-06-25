@@ -25,6 +25,14 @@ func (i *Inverntory) AddItem(item models.Item) error {
 	return nil
 }
 
+func (i *Inverntory) ListItems() []models.Item {
+	var itemList []models.Item
+	for _, i := range i.items {
+		itemList = append(itemList, i)
+	}
+	return itemList
+}
+
 func NewInventory() *Inverntory {
 	return &Inverntory{
 		items: make(map[string]models.Item),
