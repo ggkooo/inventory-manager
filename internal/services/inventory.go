@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"inventory/internal/models"
 	"strconv"
+	"time"
 )
 
 type Inverntory struct {
 	items map[string]models.Item
-	logs  models.Log
+	logs  []models.Log
 }
 
-func (i *Inverntory) AddItem(item models.Item) error {
+func (i *Inverntory) AddItem(item models.Item, user string) error {
 	if item.Quantity <= 0 {
 		return fmt.Errorf("item quantity must be greater than zero")
 	}
@@ -22,6 +23,16 @@ func (i *Inverntory) AddItem(item models.Item) error {
 	}
 
 	i.items[strconv.Itoa(item.Id)] = item
+
+	i.logs = append(i.logs, models.Log{
+		Timestamp: time.Now(),
+		Action:    "inventory entry",
+		User:      user,
+		ItemId:    item.Id,
+		Quantity:  item.Quantity,
+		Reason:    "Added item to inventory",
+	})
+
 	return nil
 }
 
@@ -36,6 +47,6 @@ func (i *Inverntory) ListItems() []models.Item {
 func NewInventory() *Inverntory {
 	return &Inverntory{
 		items: make(map[string]models.Item),
-		logs:  models.Log{},
+		logs:  []models.Log{},
 	}
 }
