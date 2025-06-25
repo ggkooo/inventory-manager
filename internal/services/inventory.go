@@ -1,10 +1,28 @@
 package services
 
-import "inventory/internal/models"
+import (
+	"fmt"
+	"inventory/internal/models"
+	"strconv"
+)
 
 type Inverntory struct {
 	items map[string]models.Item
 	logs  models.Log
+}
+
+func (i *Inverntory) AddItem(item models.Item) error {
+	if item.Quantity <= 0 {
+		return fmt.Errorf("item quantity must be greater than zero")
+	}
+
+	existingItem, exists := i.items[strconv.Itoa(item.Id)]
+	if exists {
+		item.Quantity += existingItem.Quantity
+	}
+
+	i.items[strconv.Itoa(item.Id)] = item
+	return nil
 }
 
 func NewInventory() *Inverntory {
