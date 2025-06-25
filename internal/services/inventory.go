@@ -44,6 +44,10 @@ func (i *Inverntory) ListItems() []models.Item {
 	return itemList
 }
 
+func (i *Inverntory) Logs() []models.Log {
+	return i.logs
+}
+
 func NewInventory() *Inverntory {
 	return &Inverntory{
 		items: make(map[string]models.Item),
