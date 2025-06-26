@@ -65,4 +65,9 @@ func main() {
 	}
 
 	fmt.Println(supplier1.GetInfo())
+	if supplier1.VerifyDisponibility(10, 15) {
+		fmt.Println("Avaliable")
+	} else {
+		fmt.Println("Not avaliable")
+	}
 }
