@@ -30,7 +30,40 @@ func (i *Inverntory) AddItem(item models.Item, user string) error {
 		User:      user,
 		ItemId:    item.Id,
 		Quantity:  item.Quantity,
-		Reason:    "Added item to inventory",
+		Reason:    "added item to inventory",
+	})
+
+	return nil
+}
+
+func (i *Inverntory) RemoveItem(itemId int, quantity int, user string) error {
+	existingItem, exists := i.items[strconv.Itoa(itemId)]
+	if !exists {
+		return fmt.Errorf("item not found")
+	}
+
+	if quantity > existingItem.Quantity {
+		return fmt.Errorf("item quantity invalid")
+	}
+
+	if quantity <= 0 {
+		return fmt.Errorf("quantity must be greater than zero")
+	}
+
+	existingItem.Quantity -= quantity
+	if existingItem.Quantity == 0 {
+		delete(i.items, strconv.Itoa(itemId))
+	} else {
+		i.items[strconv.Itoa(itemId)] = existingItem
+	}
+
+	i.logs = append(i.logs, models.Log{
+		Timestamp: time.Now(),
+		Action:    "inventory exit",
+		User:      user,
+		ItemId:    itemId,
+		Quantity:  quantity,
+		Reason:    "removed item to inventory",
 	})
 
 	return nil
