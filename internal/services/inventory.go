@@ -48,6 +48,14 @@ func (i *Inverntory) Logs() []models.Log {
 	return i.logs
 }
 
+func (i *Inverntory) CalculateTotalCost() float64 {
+	var TotalCost float64
+	for _, i := range i.items {
+		TotalCost += float64(i.Quantity) * i.Price
+	}
+	return TotalCost
+}
+
 func NewInventory() *Inverntory {
 	return &Inverntory{
 		items: make(map[string]models.Item),
