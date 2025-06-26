@@ -30,7 +30,15 @@ func main() {
 
 	fmt.Println()
 
+	inventory.RemoveItem(1, 5, "ggko")
+
+	fmt.Println()
+
 	for _, l := range inventory.Logs() {
 		fmt.Println(l.Info())
 	}
+
+	fmt.Println()
+
+	fmt.Println(inventory.CalculateTotalCost())
 }
