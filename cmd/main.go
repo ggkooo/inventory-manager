@@ -44,12 +44,15 @@ func main() {
 
 	fmt.Println()
 
-	itemsByName, err := services.FindByName(items, "Laptop")
+	itemsSearch, err := services.FindBy(items, func(item models.Item) bool {
+		return (item.Price > 0.00 && item.Price < 500.00)
+	})
+
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	for _, i := range itemsByName {
+	for _, i := range itemsSearch {
 		fmt.Println(i.Info())
 	}
 }

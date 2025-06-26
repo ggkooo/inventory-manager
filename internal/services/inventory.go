@@ -69,15 +69,15 @@ func (i *Inverntory) RemoveItem(itemId int, quantity int, user string) error {
 	return nil
 }
 
-func FindByName(data []models.Item, name string) ([]models.Item, error) {
-	var result []models.Item
-	for _, item := range data {
-		if item.Name == name {
-			result = append(result, item)
+func FindBy[T any](data []T, comparator func(T) bool) ([]T, error) {
+	var result []T
+	for _, v := range data {
+		if comparator(v) {
+			result = append(result, v)
 		}
 	}
 	if len(result) == 0 {
-		return nil, fmt.Errorf("nenhum item com o nome '%s' foi encontrado", name)
+		return nil, fmt.Errorf("none items found")
 	}
 	return result, nil
 }
