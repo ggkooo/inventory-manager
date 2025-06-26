@@ -55,4 +55,14 @@ func main() {
 	for _, i := range itemsSearch {
 		fmt.Println(i.Info())
 	}
+
+	fmt.Println()
+
+	supplier1 := services.Supplier{
+		CNPJ:    "11111111111111",
+		Contact: "2222222222",
+		City:    "Sao Paulo",
+	}
+
+	fmt.Println(supplier1.GetInfo())
 }
