@@ -41,4 +41,15 @@ func main() {
 	fmt.Println()
 
 	fmt.Println(inventory.CalculateTotalCost())
+
+	fmt.Println()
+
+	itemsByName, err := services.FindByName(items, "Laptop")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for _, i := range itemsByName {
+		fmt.Println(i.Info())
+	}
 }
