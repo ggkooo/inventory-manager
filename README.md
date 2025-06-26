@@ -1,26 +1,26 @@
-# ?? Inventory Manager
+# 📦 Inventory Manager
 
-## ?? Overview
+## 📝 Overview
 
 The **Inventory Manager** is a Go-based application designed to manage inventory items, track logs of inventory actions, and handle supplier information. It provides functionalities to add, remove, and list items, calculate total inventory cost, and search for items based on specific criteria. Additionally, it includes supplier management with availability checks.
 
-## ? Features
+## ✨ Features
 
-### ?? Inventory Management
-- ? Add items to the inventory.
-- ? Remove items from the inventory.
-- ?? List all items in the inventory.
-- ?? Calculate the total cost of items in the inventory.
-- ?? Log all inventory actions (additions and removals).
+### 📋 Inventory Management
+- ➕ Add items to the inventory.
+- ➖ Remove items from the inventory.
+- 📜 List all items in the inventory.
+- 💰 Calculate the total cost of items in the inventory.
+- 🕒 Log all inventory actions (additions and removals).
 
-### ?? Supplier Management
-- ??? Store supplier information (CNPJ, contact, city).
-- ? Verify item availability based on requested and available quantities.
+### 🤝 Supplier Management
+- 🗂️ Store supplier information (CNPJ, contact, city).
+- ✅ Verify item availability based on requested and available quantities.
 
-### ?? Search Functionality
-- ?? Search for items using custom criteria.
+### 🔍 Search Functionality
+- 🔎 Search for items using custom criteria.
 
-## ??? Project Structure
+## 🏗️ Project Structure
 
 ```
 .gitignore
@@ -39,7 +39,7 @@ internal/
         supplier.go
 ```
 
-### ?? Key Components
+### 🔑 Key Components
 
 1. **Models**:
     - `Item`: Represents an inventory item with attributes like ID, name, quantity, and price.
@@ -52,7 +52,7 @@ internal/
 3. **Main Application**:
     - The `main.go` file initializes the inventory, adds sample items, performs operations, and demonstrates the application's functionalities.
 
-## ?? Installation
+## ⚙️ Installation
 
 1. Clone the repository:
     ```sh
@@ -67,27 +67,27 @@ internal/
     go run cmd/main.go
     ```
 
-## ?? Usage
+## 🚀 Usage
 
-### ? Adding Items
+### ➕ Adding Items
 Use the `AddItem` method to add items to the inventory. Each addition is logged.
 
-### ? Removing Items
+### ➖ Removing Items
 Use the `RemoveItem` method to remove items from the inventory. Ensure the quantity is valid.
 
-### ?? Listing Items
+### 📜 Listing Items
 Use the `ListItems` method to retrieve all items in the inventory.
 
-### ?? Calculating Total Cost
+### 💰 Calculating Total Cost
 Use the `CalculateTotalCost` method to compute the total value of all items in the inventory.
 
-### ?? Searching Items
+### 🔎 Searching Items
 Use the `FindBy` function to search for items based on custom criteria.
 
-### ?? Supplier Management
+### 🤝 Supplier Management
 Store supplier details and verify item availability using the `Supplier` struct.
 
-## ??? Example Output
+## 🖥️ Example Output
 
 Below is an example of the application's output:
 
@@ -108,19 +108,19 @@ CNPJ: 11111111111111 | Contact: 2222222222 | City: Sao Paulo
 Available
 ```
 
-## ?? Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
-1. ?? Fork the repository.
-2. ?? Create a new branch for your feature or bug fix. 
-3. ?? Commit your changes and push them to your fork.
-4. ?? Submit a pull request.
+1. 🍴 Fork the repository.
+2. 🌱 Create a new branch for your feature or bug fix. 
+3. 💾 Commit your changes and push them to your fork.
+4. 🔄 Submit a pull request.
 
-## ?? License
+## 📜 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## ?? Contact
+## 📧 Contact
 
 For questions or suggestions, please contact the project maintainer.
