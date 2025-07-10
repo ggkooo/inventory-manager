@@ -18,7 +18,7 @@
         </div>
         <div class="login-form">
             <h2>Sign Up</h2>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register.store') }}">
                 @csrf
                 
                 <div class="mb-3">
