@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
+use App\Http\Controllers\auth\PasswordResetController;
 use App\Http\Controllers\auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,13 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+// Rotas para recuperação de senha
+Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])
+    ->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail'])
+    ->name('password.email');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])
+    ->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])
+    ->name('password.update');
