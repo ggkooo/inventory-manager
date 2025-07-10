@@ -1,0 +1,74 @@
+/* Estilos comuns para páginas de autenticação (login e register) */
+.login-container {
+    background-color: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: borderGlow 6s infinite;
+}
+
+.login-form h2 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.brand-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.brand-logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.brand-logo span {
+    color: #4652e5;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+.login-footer a {
+    color: #4652e5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-footer a:hover {
+    color: #5f6aff;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #4652e5;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3742c9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(70, 82, 229, 0.4);
+}
+
+.remember-me {
+    color: #b0b0b0;
+}
