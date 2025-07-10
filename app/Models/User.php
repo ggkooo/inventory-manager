@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -54,6 +55,18 @@ class User extends Authenticatable
             'name' => $userData['name'],
             'email' => $userData['email'],
             'password' => Hash::make($userData['password']),
+        ]);
+    }
+
+    /** 
+     * @param array $credentials
+     * @return bool
+     */
+    public static function authenticateUser(array $credentials): bool
+    {
+        return Auth::attempt([
+            'email' => $credentials['email'],
+            'password' => $credentials['password']
         ]);
     }
 }
