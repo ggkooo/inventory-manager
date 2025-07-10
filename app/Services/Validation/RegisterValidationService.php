@@ -25,15 +25,15 @@ class RegisterValidationService
                 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'
             ],
         ], [
-            'name.required' => 'O nome completo é obrigatório.',
-            'name.min' => 'O nome deve ter pelo menos 8 caracteres.',
-            'email.required' => 'O e-mail é obrigatório.',
-            'email.email' => 'Por favor, informe um e-mail válido.',
-            'email.unique' => 'Este e-mail já está sendo utilizado.',
-            'password.required' => 'A senha é obrigatória.',
-            'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
-            'password.confirmed' => 'As senhas não conferem.',
-            'password.regex' => 'A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula e um número.'
+            'name.required' => 'The name is required.',
+            'name.min' => 'Name must be at least 8 characters long.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please provide a valid email address.',
+            'email.unique' => 'This email is already in use.',
+            'password.required' => 'Password is required.',
+            'password.min' => 'Password must be at least 8 characters long.',
+            'password.confirmed' => 'The passwords do not match.',
+            'password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, and one number.'
         ])->validate();
     }
 }
